@@ -1,0 +1,26 @@
+{
+  "name": "@saas/api",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "@fastify/cors": "^10.0.1",
+    "@saas/auth": "*",
+    "fastify": "^5.1.0",
+    "fastify-type-provider-zod": "^4.0.2"
+  },
+  "devDependencies": {
+    "@saas/eslint-config": "*",
+    "@saas/prettier": "*",
+    "@saas/tsconfig": "*",
+    "@types/node": "^22.8.4",
+    "tsx": "^4.19.2"
+  },
+  "prettier": "@saas/prettier",
+  "eslintConfig": {
+    "extends": [
+      "@saas/eslint-config/node"
+    ]
+  }
+}
