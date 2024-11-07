@@ -10,6 +10,8 @@ export async function createAccount(app: FastifyInstance) {
     '/users',
     {
       schema: {
+        tags: ['auth'],
+        summary: 'Create a new account',
         body: zod.object({
           name: zod.string(),
           email: zod.string().email(),
