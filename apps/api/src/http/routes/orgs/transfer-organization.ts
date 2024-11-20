@@ -34,7 +34,6 @@ export async function transferOrganization(app: FastifyInstance) {
       },
       async (request, reply) => {
         const { slug } = request.params
-        const { transferToUserId } = request.body
 
         const userId = await request.getCurrentUserId()
         const { membership, organization } =
@@ -49,6 +48,8 @@ export async function transferOrganization(app: FastifyInstance) {
             `You're not allowed to transfer this organization ownership.`,
           )
         }
+
+        const { transferToUserId } = request.body
 
         const transferToMembership = await prisma.member.findUnique({
           where: {

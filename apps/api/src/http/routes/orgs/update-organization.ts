@@ -36,7 +36,6 @@ export async function updateOrganization(app: FastifyInstance) {
       },
       async (request, reply) => {
         const { slug } = request.params
-        const { name, domain, shouldAttachUsersByDomain } = request.body
 
         const userId = await request.getCurrentUserId()
         const { membership, organization } =
@@ -51,6 +50,8 @@ export async function updateOrganization(app: FastifyInstance) {
             `You're not allowed to update this organization.`,
           )
         }
+
+        const { name, domain, shouldAttachUsersByDomain } = request.body
 
         if (domain) {
           const organizationByDomain = await prisma.organization.findFirst({
