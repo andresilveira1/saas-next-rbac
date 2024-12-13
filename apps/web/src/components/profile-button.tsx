@@ -31,7 +31,7 @@ export async function ProfileButton() {
           <span className="text-xs text-muted-foreground">{user.email}</span>
         </div>
 
-        <Avatar>
+        <Avatar className="size-8">
           {user.avatarUrl && <AvatarImage src={user.avatarUrl} />}
           {user.name && (
             <AvatarFallback>{getInitials(user.name)}</AvatarFallback>
@@ -43,7 +43,7 @@ export async function ProfileButton() {
 
       <DropdownMenuContent align="end">
         <DropdownMenuItem asChild>
-          <a href="/api/auth/sign-out">
+          <a href="/api/auth/sign-out" className="cursor-pointer">
             <LogOut className="mr-2 size-4" />
             Sign Out
           </a>

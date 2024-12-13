@@ -30,7 +30,7 @@ export async function OrganizationSwitcher() {
         {currentOrganization ? (
           <>
             {' '}
-            <Avatar className="mr-2 size-4">
+            <Avatar className="size-4">
               {currentOrganization.avatarUrl && (
                 <AvatarImage src={currentOrganization.avatarUrl} />
               )}
